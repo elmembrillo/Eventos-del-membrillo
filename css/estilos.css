@@ -145,3 +145,6 @@ padding:60px;
 color:#777;
 
 }
+body {
+  border: 10px solid red;
+}
