@@ -1,160 +1,241 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ===========================
+   GLOBAL
+=========================== */
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #222;
+    background: #f7f4ef;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f7f0dd;
-    color:#222;
+.header {
+    text-align: center;
+    padding: 3rem 1.5rem 1.8rem;
+    background: #ffffff;
 }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 40px;
+.header h1 {
+    font-family: 'Mansalva', cursive;
+    font-size: clamp(2.5rem, 5vw, 3.6rem);
+    margin: 0;
+    letter-spacing: 0.05em;
 }
 
-.logo{
-    font-family:'Mansalva', cursive;
-    font-size:42px;
-    color:#222;
+.header p {
+    margin: 1rem auto 0;
+    font-size: 1.05rem;
+    color: #5a5751;
 }
 
-nav a{
-    text-decoration:none;
-    color:#222;
-    margin-left:25px;
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 2rem;
+    align-items: center;
+    max-width: 1180px;
+    margin: 0 auto 3.5rem;
+    padding: 2rem 1.5rem;
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
 }
 
-.hero{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-    padding:60px 40px;
+.hero img {
+    width: 100%;
+    display: block;
+    border-radius: 24px;
+    object-fit: cover;
+    min-height: 380px;
 }
 
-.hero span{
-    color:#9b7b35;
+.hero-text {
+    max-width: 580px;
 }
 
-.hero h1{
-    font-family:'Mansalva', cursive;
-    font-size:55px;
-    margin:20px 0;
+.hero-text h2 {
+    font-size: clamp(2.3rem, 4vw, 3.8rem);
+    line-height: 1.05;
+    margin: 0 0 1.25rem;
 }
 
-.hero p{
-    font-size:20px;
-    line-height:1.5;
+.hero-text p {
+    margin: 0 0 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b4b4b;
 }
 
-.boton{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:#d5a928;
-    color:#222;
-    text-decoration:none;
-    border-radius:30px;
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 30px;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.imagen img{
+.boton:hover {
+    background: #444;
+    transform: translateY(-1px);
+}
+
+/* ===========================
+   TARJETA DE EVENTO
+=========================== */
+
+.tarjeta {
+
+    max-width: 850px;
+    margin: 70px auto;
+    padding: 0;
+
+    background: #ffffff;
+
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+
+}
+
+.tarjeta img{
+
     width:100%;
-    border-radius:20px;
+    display:block;
+
 }
 
-.agenda{
-    padding:40px;
+.tarjeta h3{
+
+    font-family:'Mansalva', cursive;
+
+    font-size:2.3rem;
+
+    font-weight:normal;
+
+    margin:35px 40px 15px;
+
+    line-height:1.1;
+
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    margin-top:30px;
+.tarjeta p{
+
+    margin:0 40px 35px;
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    color:#444;
+
 }
 
-.card{
-    background:#fffaf0;
-    padding:30px;
-    border-radius:20px;
+.tarjeta button{
+
+    margin:0 40px 45px;
+
+    padding:14px 34px;
+
+    border:1px solid #222;
+
+    background:white;
+
+    color:#222;
+
+    cursor:pointer;
+
+    font-size:.95rem;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+
 }
 
-footer{
-    text-align:center;
-    padding:40px;
+.tarjeta button:hover{
+
+    background:#222;
+
+    color:white;
+
+}/* ===========================
+   CELULARES
+=========================== */
+
+@media (max-width: 970px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero img {
+    min-height: 300px;
+  }
+
 }
-/* -------------------------
-   Adaptación para celulares
--------------------------- */
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    header{
-        flex-direction:column;
-        gap:20px;
-        padding:25px 20px;
-        text-align:center;
-    }
+  .hero {
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
 
-    .logo{
-        font-size:36px;
-    }
+  .hero-text h2 {
+    font-size: 2.25rem;
+  }
 
-    nav{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:15px;
-    }
+  .hero-text p {
+    font-size: 1rem;
+  }
 
-    nav a{
-        margin-left:0;
-        font-size:15px;
-    }
+  .tarjeta h3 {
+    font-size: 1.8rem;
+  }
 
-    .hero{
-        display:flex;
-        flex-direction:column;
-        padding:40px 20px;
-        gap:30px;
-        text-align:center;
-    }
+  .tarjeta p {
+    font-size: 0.95rem;
+  }
 
-    .hero h1{
-        font-size:38px;
-    }
+}/* HERO MOBILE */
 
-    .hero p{
-        font-size:18px;
-    }
+@media (max-width: 768px) {
 
-    .imagen{
-        order:-1;
-    }
+  .hero {
+    min-height: 80vh;
+    position: relative;
+  }
 
-    .boton{
-        padding:16px 28px;
-    }
+  .hero img {
+    height: 80vh;
+    object-fit: cover;
+  }
 
-    .agenda{
-        padding:40px 20px;
-    }
+  .hero-text {
+    padding: 20px;
+    text-align: center;
+  }
 
-    .cards{
-        grid-template-columns:1fr;
-    }
+  .hero-text h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
 
-    .card{
-        padding:25px;
-    }
+  .hero-text p {
+    font-size: 1rem;
+  }
 
-    footer{
-        padding:30px 20px;
-    }
+  .boton {
+    display: inline-block;
+    padding: 12px 25px;
+  }
 
 }
